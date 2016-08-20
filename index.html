@@ -13,6 +13,13 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
     <title>Mspl4soa by akramkammoun</title>
   </head>
 
@@ -29,33 +36,57 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p> The MSPL4SOA is a tool that combines the Multiple Sofware Product Line (MSPL) with the Service Oriented Architecture (SOA) paradigms. The goal of the tool is to design a $MSPL\_{SOA}$ that includes two dependent SPLs, named $SPL\_{SP}$ and  $SPL\_{SC}$, for respectively the Service Providers (SPs) and Service Consumers (SCs). These SPLs are used to generate valid and consistent SPs and SCs. 
+The MSPL4SOA tool (see Figure 1) is mainly based on the Java EE technologies and the FAMILIAR tool (https://github.com/FAMILIAR-project/familiar-documentation). It is composed of two generators allowing to generate customized, valid and consistent SPs and SCs, namely: `spgenerator` and `scgenerator`.</p>
+
+<figure>
+<img src="./images/tool_site.png" alt="tool_site" />
+<figcaption><b>Figure 1: </b> Snapshots of our tool MSPL4SOA</figcaption>
+</figure>
+
+<h3>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Feature Models of the Service Provider and Service Consumer</h3>
+
+<p>We propose to integrate in our tool practical $FM\_{SP}$ and $FM\_{SC}$ to handle the variability of SPL<SUB>SP</SUB> and SPL<SUB>SC</SUB>.
+These two FMs are respectively illustrated in the following figures.
+A technical report about the features of these FMs can be downloaded
+from <a href="./../../MSPL4SOA/files/fms_sc_sp.pdf">here</a> (2OO Ko).</p>
+
+<figure>
+<img src="./images/fm_sp2.png" alt="fm_sp" />
+<figcaption><b>Figure 2: </b>Feature model $FM\_{SP}$</figcaption>
+</figure>
+
+
+<figure>
+<img src="./images/fm_sc2.png" alt="fm_sc" />
+<figcaption><b>Figure 3: </b>Feature model $FM\_{SC}$</figcaption>
+</figure>
+
+
+<h3>
+<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
 
 <p>
- The MSPL4SOA is a tool that combines the Multiple Sofware Product Line (MSPL) with the Service Oriented Architecture (SOA) paradigms. The goal of the tool is to design an MSPL that includes two dependent SPLs, named SPL<SUB>SP</SUB> and  SPL<SUB>SC</SUB>, for respectively the Service Providers (SPs) and Service Consumers (SCs). These SPLs are used to generate valid and consistent SPs and SCs. 
- The MSPL4SOA tool (see Figure 1) is mainly based on the Java EE technologies and the FAMILIAR tool (https://github.com/FAMILIAR-project/familiar-documentation).
- It is composed of two generators allowing to generate customized, valid and consistent SPs and SCs, namely: `spgenerator` and `scgenerator`.
-</p>
-
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
-
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+We provide <a href="./files/jbdevstudio9.0.rar">here</a> a pre-configured Eclipse version (http://www.jboss.org/products/devstudio/overview/) named JbdevStudio9.0 (996 Mo) that includes all the required technologies and configurations for our tool, such:</p>
+<ul>
+<li>The ESB Switchyard2 (http://switchyard.jboss.org), that contains: HornetQ JMS (MOM implementation), Apache Camel, RestEasy, Apache CXF, ... .</li>
+<li>The server JBoss Enterprise Application Platform (EAP) 6.4 (http://www.jboss.org/products/eap/overview).</li>
+</ul>
+The `spgenerator` can be downloaded from <a href="./files/spgenerator.rar">here</a> (161 Mo) and the `scgenerator` can be downloaded from <a href="./scgenerator.rar">here</a> (151 Mo).
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<ul>
+<li>Akram KAMOUN (akram.kamoun@redcad.org)</li>
+<li>Mohamed HADJ KACEM (mohamed.hadjkacem@isimsf.rnu.tn)</li>
+<li>Ahmed HADJ KACEM (ahmed.hadjkacem@fsegs.rnu.tn)</li>
+<li>Khalil DRIRA (khalil@laas.fr)</li>
+</ul>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
         </section>
 
         <aside id="sidebar">
