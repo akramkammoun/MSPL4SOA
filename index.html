@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -134,7 +134,7 @@ that we propose in the following Figure.</p>
 
 
 
-<pre><code class="html">
+<pre class="prettyprint">
 SCGenerator scGenerator = new SCGenerator("./files/sp_manager/fm_sc_update.fml");
 try {
 	scGenerator.setAmFilePath("./files/sp_manager/am/am_sc_update.fml");
@@ -145,7 +145,7 @@ try {
 }
 T result = (T) scGenerator.getResponse(); 
 String state = scGenerator.getState(); 
-</code></pre>
+</pre>
 
 <p>
 The SC generator generates for each \textit{am\_sc\_update.xml} the code lines of our API presented in Fig.~\ref{fig_api}.
