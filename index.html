@@ -100,7 +100,7 @@ The second video discusses the functionalities of the SC generator</p>
 <a id="service-provider-generator" class="anchor" href="#service-provider-generator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Service provider generator</h3>
 
 <p>
-The SP generator, named `spgenerator`, is an implementation of the $SPL_{SP}$ and thus responsible to generate customized SPs which are based on the
+The SP generator, named `spgenerator`, is an implementation of the FM<SUB>SC</SUB> and thus responsible to generate customized SPs which are based on the
 Switchyard 2 ESB.
 The Switchyard 2 is a recent free software ESB developed by the Redhat company.
 It adopts in its implementation the Service Component Architecture (SCA) that provides a technology-neutral assembly capability allowing
@@ -122,14 +122,14 @@ SCs as standalone Java programs that invoke the capabilities offered by a genera
 For this purpose, two main steps are required by the developer.
 In the first step, the SC developer gives to the SC generator as an input
 the host name of the SP (e.g., http://localhost:8080/sp_manager). 
-The SC generator will then download, from this SP, the files \textit{fm\_sc\_update.fml}. 
+The SC generator will then download, from this SP, the files fm_sc_update.fml. 
 This file will be used to configure the SC generator by generating files like input and output classes of the SP capabilities.
-In the second step, the SC developer derives one or many \textit{am\_sc\_update.fml} (i.e., $AM_{SC_{update}}$)
-from \textit{fm\_sc\_update.fml}.
-Each $AM\_{SC\_{update}}$ regroups the required features to invoke a certain capability.
-Afterwards, the SC generator will use the Apache Velocity tool to transform the \textit{fm\_sc\_update.fml},
+In the second step, the SC developer derives one or many am_sc_update.fml (i.e., AM<SUB>SC<SUB>update</SUB></SUB>)
+from fm_sc_update.fml.
+Each AM<SUB>SC<SUB>update</SUB></SUB> regroups the required features to invoke a certain capability.
+Afterwards, the SC generator will use the Apache Velocity tool to transform the fm_sc_update.fml,
 defined with the FAMILIAR language, to the source code of the required SC.
-For each \textit{fm\_sc\_update.fml}, the generator generates a source code based on our Java API, 
+For each fm_sc_update.fml, the generator generates a source code based on our Java API, 
 that we propose in the following Figure.</p>
 
 
@@ -148,30 +148,29 @@ String state = scGenerator.getState();
 </pre>
 
 <p>
-The SC generator generates for each \textit{am\_sc\_update.xml} the code lines of our API presented in Fig.~\ref{fig_api}.
-The API is composed of, but not limited to, seven principle instructions that are required to execute an \textit{am\_sc\_update.fml}. 
-The first instruction (line 1) creates an instance of the class \textit{SCGenerator}
-which takes as input  the path of the file \textit{fm\_sc\_update.fml}.
-The second instruction (line 3) sets the path of the file \textit{am\_sc\_update.fml}.
-The third instruction (line 4) executes the \textit{am\_sc\_update.fml}, 
-i.e., it maps the features of \textit{am\_sc\_update.fml} with the artifacts of SC.
-The fourth instruction (line 6) allows to stop the execution of \textit{am\_sc\_update.fml} and release the resources (e.g., closing the MOM connections).
+The API is composed of, but not limited to, seven principle instructions that are required to execute an am_sc_update.fml. 
+The first instruction (line 1) creates an instance of the class SCGenerator
+which takes as input  the path of the file fm_sc_update.fml.
+The second instruction (line 3) sets the path of the file am_sc_update.fml.
+The third instruction (line 4) executes the am_sc_update.fml, 
+i.e., it maps the features of am_sc_update.fml with the artifacts of SC.
+The fourth instruction (line 6) allows to stop the execution of am_sc_update.fml and release the resources (e.g., closing the MOM connections).
 The SC developer can integrate some source codes between the third and fourth instructions (line 5). This code will be 
-executed in parallel with the capability invocation only if the feature \texttt{Response handler}
-presented in the \textit{am\_sc\_update.fml} is asynchronous (see Fig.~\ref{fig_our_approach} and \cite{MSPL4SOA:updateonly}).
-The fifth instruction (line 7) permits to handle the exceptions thrown in case of error in the execution of \textit{am\_sc\_update.fml}
-(e.g., problem in the SP or \textit{am\_sc\_update.fml} is not consistent with \textit{fm\_sc\_update.fml}).
+executed in parallel with the capability invocation only if the feature Response handler
+presented in the am_sc_update.fml is asynchronous (see Figure 3).
+The fifth instruction (line 7) permits to handle the exceptions thrown in case of error in the execution of am_sc_update.fml
+(e.g., problem in the SP or am_sc_update.fml is not consistent with fm_sc_update.fml).
 The sixth and seventh instructions (lines 9 and 10) retrieve respectively the response and the state data (if any) of the capability. 
-The letter \textit{T} in line 11 will be replaced, by the SC generator, with the type of the response object.
+The letter T in line 11 will be replaced, by the SC generator, with the type of the response object.
 </p>
 
 <p>
 Many advantages can be identified when using our API.
 It permits to use the same few lines of code to execute a given
-\textit{am\_sc\_update.fml} independently of its features (e.g., SOAP, REST and MOM) and hides their implementation complexities. 
+am_sc_update.fml independently of its features (e.g., SOAP, REST and MOM) and hides their implementation complexities. 
 Hence, the SC developer does not require 
 to work directly with the low level APIs of these features. 
-Our API is designed to map the features of \textit{am\_sc\_update.fml} with the artifacts of SC at \textit{runtime}.
+Our API is designed to map the features of am_sc_update.fml with the artifacts of SC at runtime.
 This can be useful, as an instance, to reconfigure the SC at runtime in order to adapt to the SP changes.</p>
 
 <h3>
