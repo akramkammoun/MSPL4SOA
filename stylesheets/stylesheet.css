@@ -497,6 +497,14 @@ header h2 {
   max-width: 100%;
 }
 
+/* 
+Added by me akram
+*/
+
+img {
+  max-width: 100%;
+}
+
 aside#sidebar {
   float: right;
   width: 200px;
